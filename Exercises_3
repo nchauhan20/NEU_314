@@ -1,0 +1,19 @@
+# Section A
+# part a
+image1 = imread("el-capitan.png")
+imshow(image1)
+size(image1)
+
+# part b
+red = zeros(360, 640)
+green = zeros(360, 640)
+blue = zeros(360, 640)
+
+function extraction(string)
+    image = imread(string)
+    imshow(image)
+    red = image[:,:,1]
+    green = image[:,:,2]
+    blue = image[:,:,3]
+    return red, green, blue
+end
