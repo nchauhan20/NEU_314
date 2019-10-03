@@ -12,8 +12,24 @@ blue = zeros(360, 640)
 function extraction(string)
     image = imread(string)
     imshow(image)
+
     red = image[:,:,1]
     green = image[:,:,2]
     blue = image[:,:,3]
+
+    println("Reset with git reset --mixed")
     return red, green, blue
 end
+
+image2 = zeros(360, 640, 3)
+image2[:,:,3], image2[:,:,1], image2[:,:,2] = extraction("el-capitan.png")
+
+figure(figsize=[10,4])
+subplot(1,2,1)
+imshow(image1)
+title("El Capitan, original image")
+axis("off")
+subplot(1,2,2)
+imshow(image2)
+title("El Capitan, color channels switched")
+axis("off")
